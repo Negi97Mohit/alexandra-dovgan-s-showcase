@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeading, SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { ALL_REVIEWS_URL, QUOTES, REVIEWS } from "@/data/dovgan";
+import { QUOTES, REVIEWS } from "@/data/dovgan";
 
 export const Route = createFileRoute("/press")({
   head: () => ({
@@ -23,7 +24,13 @@ export const Route = createFileRoute("/press")({
   component: PressPage,
 });
 
+const STEP = 10;
+
 function PressPage() {
+  const [count, setCount] = useState(STEP);
+  const visible = REVIEWS.slice(0, count);
+  const remaining = REVIEWS.length - visible.length;
+
   return (
     <div className="min-h-screen">
       <SiteHeader compact />
@@ -44,7 +51,7 @@ function PressPage() {
         </div>
 
         <ul className="mt-20 border-t border-border">
-          {REVIEWS.map((r) => (
+          {visible.map((r) => (
             <li
               key={r.url}
               className="-mx-4 border-b border-border px-4 transition-colors duration-200 hover:bg-secondary/60"
@@ -61,9 +68,19 @@ function PressPage() {
           ))}
         </ul>
 
-        <a href={ALL_REVIEWS_URL} target="_blank" rel="noreferrer" className="rule-link mt-10 inline-block">
-          Read all reviews →
-        </a>
+        {remaining > 0 ? (
+          <button
+            type="button"
+            onClick={() => setCount((c) => c + STEP)}
+            className="rule-link mt-10 inline-block cursor-pointer"
+          >
+            Load more reviews ({remaining}) →
+          </button>
+        ) : (
+          <p className="mt-10 text-[0.6875rem] uppercase tracking-[0.24em] text-muted-foreground">
+            All {REVIEWS.length} reviews shown
+          </p>
+        )}
       </div>
 
       <SiteFooter />
