@@ -68,9 +68,19 @@ function PressPage() {
           ))}
         </ul>
 
-        <a href={ALL_REVIEWS_URL} target="_blank" rel="noreferrer" className="rule-link mt-10 inline-block">
-          Read all reviews →
-        </a>
+        {remaining > 0 ? (
+          <button
+            type="button"
+            onClick={() => setCount((c) => c + STEP)}
+            className="rule-link mt-10 inline-block cursor-pointer"
+          >
+            Load more reviews ({remaining}) →
+          </button>
+        ) : (
+          <p className="mt-10 text-[0.6875rem] uppercase tracking-[0.24em] text-muted-foreground">
+            All {REVIEWS.length} reviews shown
+          </p>
+        )}
       </div>
 
       <SiteFooter />
