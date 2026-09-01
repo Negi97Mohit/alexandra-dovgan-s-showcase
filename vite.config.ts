@@ -11,9 +11,20 @@ export default defineConfig({
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart({
       server: { entry: "server" },
+      prerender: {
+        routes: [
+          "/",
+          "/bio",
+          "/season",
+          "/gallery",
+          "/media",
+          "/press",
+          "/contact",
+        ],
+      },
     }),
     nitro({
-      preset: "cloudflare-module",
+      preset: process.env.NITRO_PRESET || "netlify",
     }),
     viteReact(),
   ],
