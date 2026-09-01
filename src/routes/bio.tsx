@@ -30,6 +30,7 @@ function BioPage() {
 
   return (
     <div className="min-h-screen">
+      <SiteHeader compact />
       <PageHeading eyebrow="Biography / Piano" title="Biography" />
 
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
