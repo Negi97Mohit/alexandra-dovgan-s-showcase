@@ -51,7 +51,7 @@ function Home() {
         </div>
         <figure className="fade-up">
           <img
-            src={PHOTOS[0].src}
+            src={PHOTOS[0]!.src}
             alt="Alexandra Dovgan, portrait at the piano, photographed by Vladimir Volkov"
             className="w-full object-cover shadow-[0_30px_80px_-40px_rgba(0,0,0,0.55)]"
           />
@@ -69,7 +69,7 @@ function Home() {
       <section className="mx-auto grid max-w-[1400px] gap-12 px-6 py-24 md:grid-cols-[1fr_1.1fr] md:px-12">
         <figure>
           <img
-            src={PHOTOS[6].src}
+            src={PHOTOS[6]!.src}
             alt="Alexandra Dovgan in performance, photographed by Vladimir Volkov"
             className="w-full object-cover"
           />

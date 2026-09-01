@@ -36,12 +36,12 @@ function BioPage() {
       <div className="mx-auto grid max-w-[1400px] gap-14 px-6 md:grid-cols-[1fr_1.15fr] md:px-12">
         <div>
           <img
-            src={PHOTOS[1].src}
+            src={PHOTOS[1]!.src}
             alt="Alexandra Dovgan portrait by Vladimir Volkov"
             className="w-full object-cover"
           />
           <img
-            src={PHOTOS[8].src}
+            src={PHOTOS[8]!.src}
             alt="Alexandra Dovgan on stage, photographed by Vladimir Volkov"
             loading="lazy"
             className="mt-6 w-full object-cover"
@@ -78,9 +78,9 @@ function BioPage() {
             </div>
           ) : (
             <div className="mt-8 space-y-6">
-              <p className="text-base leading-relaxed text-muted-foreground">{active.excerpt}</p>
-              <a href={active.pdf} target="_blank" rel="noreferrer" className="rule-link">
-                {active.name} — full biography (PDF) →
+              <p className="text-base leading-relaxed text-muted-foreground">{active!.excerpt}</p>
+              <a href={active!.pdf} target="_blank" rel="noreferrer" className="rule-link">
+                {active!.name} — full biography (PDF) →
               </a>
             </div>
           )}
