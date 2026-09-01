@@ -133,7 +133,7 @@ export function PageHeading({
   return (
     <div className="fade-up mx-auto max-w-[1400px] px-6 pt-16 pb-14 md:px-12 md:pt-24">
       <p className="eyebrow">{eyebrow}</p>
-      <h1 className="mt-6 font-display text-5xl leading-[1.05] text-foreground md:text-7xl">
+      <h1 className="mt-6 font-display text-5xl leading-[1.05] text-primary md:text-7xl">
         {title}
       </h1>
       {lead ? (
