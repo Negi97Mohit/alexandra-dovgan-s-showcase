@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BioRouteImport } from './routes/bio'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as SeasonRouteImport } from './routes/season'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const BioRoute = BioRouteImport.update({
   path: '/bio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SeasonRoute = SeasonRouteImport.update({
   id: '/season',
   path: '/season',
@@ -32,30 +38,34 @@ const SeasonRoute = SeasonRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bio': typeof BioRoute
+  '/gallery': typeof GalleryRoute
   '/season': typeof SeasonRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bio': typeof BioRoute
+  '/gallery': typeof GalleryRoute
   '/season': typeof SeasonRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/bio': typeof BioRoute
+  '/gallery': typeof GalleryRoute
   '/season': typeof SeasonRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bio' | '/season'
+  fullPaths: '/' | '/bio' | '/gallery' | '/season'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bio' | '/season'
-  id: '__root__' | '/' | '/bio' | '/season'
+  to: '/' | '/bio' | '/gallery' | '/season'
+  id: '__root__' | '/' | '/bio' | '/gallery' | '/season'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BioRoute: typeof BioRoute
+  GalleryRoute: typeof GalleryRoute
   SeasonRoute: typeof SeasonRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/season': {
       id: '/season'
       path: '/season'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BioRoute: BioRoute,
+  GalleryRoute: GalleryRoute,
   SeasonRoute: SeasonRoute,
 }
 export const routeTree = rootRouteImport
