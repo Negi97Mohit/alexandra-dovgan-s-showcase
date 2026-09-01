@@ -155,3 +155,12 @@
     transform: none;
   }
 }
+
+/* Hide Netlify pre-launch / powered-by badges */
+[data-netlify-badge],
+.netlify-badge,
+#netlify-badge,
+iframe[src*="netlify"] {
+  display: none !important;
+}
+

@@ -29,9 +29,9 @@ function Home() {
     <div className="min-h-screen">
       <SiteHeader compact />
 
-      <section className="mx-auto grid max-w-[1400px] items-start gap-10 px-6 pb-20 md:grid-cols-2 md:px-12 md:pb-28">
-        <div className="fade-up">
-          <h1 className="font-display text-6xl leading-[0.95] text-primary md:text-8xl">
+      <section className="mx-auto grid min-h-[70vh] max-w-[1400px] items-center gap-10 px-6 pb-20 md:grid-cols-2 md:px-12 md:pb-28">
+        <div className="fade-up my-auto flex flex-col justify-center">
+          <h1 className="font-display text-6xl leading-[0.95] text-primary md:text-8xl lg:text-9xl">
             {ARTIST.first}
             <span className="mt-2 block italic">{ARTIST.last}</span>
           </h1>
