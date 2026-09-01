@@ -31,7 +31,7 @@ function BioPage() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <PageHeading eyebrow="Biography / Piano" title="Alexandra Dovgan" />
+      <PageHeading eyebrow="Biography / Piano" title="Biography" />
 
       <div className="mx-auto grid max-w-[1400px] gap-14 px-6 md:grid-cols-[1fr_1.15fr] md:px-12">
         <div>

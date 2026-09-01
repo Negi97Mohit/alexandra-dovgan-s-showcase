@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader compact />
 
       <section className="mx-auto grid max-w-[1400px] items-center gap-10 px-6 pt-10 pb-20 md:grid-cols-2 md:px-12 md:pt-16 md:pb-28">
         <div className="fade-up">
