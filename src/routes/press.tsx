@@ -24,7 +24,13 @@ export const Route = createFileRoute("/press")({
   component: PressPage,
 });
 
+const STEP = 10;
+
 function PressPage() {
+  const [count, setCount] = useState(STEP);
+  const visible = REVIEWS.slice(0, count);
+  const remaining = REVIEWS.length - visible.length;
+
   return (
     <div className="min-h-screen">
       <SiteHeader compact />
