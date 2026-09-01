@@ -1,31 +1,78 @@
-# Remix of Remix of Remix of Alexandra Dovgan's Showcase
+# Alexandra Dovgan — Showcase & Portfolio
 
-onvert this https://www.amcmusic.com/artists/alexandra-dovgan/
-into a website like this 
-https://ilva-eigus.netlify.app/
-make suere to use the real ata an images from here 
-https://www.amcmusic.com/artists/alexandra-dovgan/
+Official showcase website for classical pianist **Alexandra Dovgan**, presenting her biography, international concert calendar, photogallery, media appearances, press reviews, and management contact details.
 
-onot use any ummy values or images 
-make sure to use all the images from https://www.amcmusic.com/artists/alexandra-dovgan/
+## ✨ Features
 
-This project was built with [Lovable](https://lovable.dev).
+- **Biography & Profile**: Comprehensive biographical background available in four languages (English, Italian, German, French).
+- **Concert Schedule**: Upcoming concert listings, venues, and tour details.
+- **Photogallery**: High-resolution performance and press photography.
+- **Media & Broadcasts**: Curated video performances with orchestras and recitals.
+- **Selected Press & Reviews**: International critical reception and articles.
+- **Contact & Management**: Worldwide representation via AMC (Artists Management Company, Verona) and regional contacts.
+- **Refined Classical Aesthetics**: Editorial typography, fluid animations, and mobile-friendly responsive navigation.
 
-## Build with Lovable
+## 🛠️ Tech Stack
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5131aaf0-0f92-4404-abb8-8fc831dd1861).
+- **Framework**: [TanStack Start](https://tanstack.com/router) with React 19
+- **Routing**: TanStack Router (file-based routing)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) + `tw-animate-css`
+- **UI Components**: Radix UI primitives & Lucide Icons
+- **Language**: TypeScript
+- **Bundler**: Vite
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## 🚀 Getting Started
 
-## Development
+### Prerequisites
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Ensure you have [Node.js](https://nodejs.org/) (v20+ recommended) installed.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd alexandra-dovgan-s-showcase
+
+# Install dependencies
+npm install
+```
+
+### Development Server
+
+Start the local development server:
+
+```bash
 npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) (or the port indicated in your terminal) in your browser.
+
+### Production Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Code Quality & Formatting
+
+```bash
+# Run ESLint checks
+npm run lint
+
+# Format codebase with Prettier
+npm run format
+```
+
+## 📄 License & Credits
+
+- Artist Information & Management: [AMC Artists Management Company, Verona](https://www.amcmusic.com/artists/alexandra-dovgan/)
+- Photography: Vladimir Volkov

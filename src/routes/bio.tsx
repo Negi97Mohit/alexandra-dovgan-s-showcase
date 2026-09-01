@@ -99,16 +99,28 @@ function BioPage() {
                   {BIO_PARAGRAPHS[0]}
                 </p>
                 {BIO_PARAGRAPHS.slice(1).map((p) => (
-                  <p key={p.slice(0, 40)} className="text-[0.95rem] leading-[1.9] text-muted-foreground">
+                  <p
+                    key={p.slice(0, 40)}
+                    className="text-[0.95rem] leading-[1.9] text-muted-foreground"
+                  >
                     {p}
                   </p>
                 ))}
-                <p className="text-[0.6875rem] uppercase tracking-[0.24em] text-primary">{BIO_DATE}</p>
+                <p className="text-[0.6875rem] uppercase tracking-[0.24em] text-primary">
+                  {BIO_DATE}
+                </p>
               </div>
             ) : (
               <div className="mt-10 max-w-[62ch] space-y-7">
-                <p className="text-[0.95rem] leading-[1.9] text-muted-foreground">{active!.excerpt}</p>
-                <a href={active!.pdf} target="_blank" rel="noreferrer" className="rule-link cursor-pointer">
+                <p className="text-[0.95rem] leading-[1.9] text-muted-foreground">
+                  {active!.excerpt}
+                </p>
+                <a
+                  href={active!.pdf}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rule-link cursor-pointer"
+                >
                   {active!.name} — full biography (PDF) →
                 </a>
               </div>
@@ -144,7 +156,6 @@ function BioPage() {
           />
         </div>
       </div>
-
 
       <SiteFooter />
     </div>

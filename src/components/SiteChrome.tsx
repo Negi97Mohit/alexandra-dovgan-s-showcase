@@ -103,12 +103,13 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
   );
 }
 
-
 export function SiteFooter() {
   return (
     <footer className="mt-32 border-t border-border">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-6 px-6 py-10 text-[0.6875rem] uppercase tracking-[0.24em] text-muted-foreground md:flex-row md:items-center md:justify-between md:px-12">
-        <span>{ARTIST.name} — {ARTIST.instrument}</span>
+        <span>
+          {ARTIST.name} — {ARTIST.instrument}
+        </span>
         <span>General management · AMC — Artists Management Company, Verona</span>
         <a
           href="mailto:office@amcmusic.com"

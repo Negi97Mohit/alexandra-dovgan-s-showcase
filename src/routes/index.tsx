@@ -1,15 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import {
-  ARTIST,
-  BIO_INTRO,
-  CONCERTS,
-  MEDIA,
-  NEWS,
-  PHOTOS,
-  QUOTES,
-  REVIEWS,
-} from "@/data/dovgan";
+import { ARTIST, BIO_INTRO, CONCERTS, MEDIA, NEWS, PHOTOS, QUOTES, REVIEWS } from "@/data/dovgan";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -204,13 +195,7 @@ function Home() {
         <h2 className="font-display text-4xl text-foreground md:text-5xl">News</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-[240px_1fr] md:items-center">
           {NEWS.map((n) => (
-            <a
-              key={n.url}
-              href={n.url}
-              target="_blank"
-              rel="noreferrer"
-              className="group contents"
-            >
+            <a key={n.url} href={n.url} target="_blank" rel="noreferrer" className="group contents">
               <img src={n.image} alt={n.title} loading="lazy" className="w-full object-cover" />
               <p className="font-display text-2xl text-foreground transition-colors group-hover:text-primary">
                 {n.title}

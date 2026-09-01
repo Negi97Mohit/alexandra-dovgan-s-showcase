@@ -79,7 +79,7 @@
   --secondary: oklch(0.872 0.012 79.8);
   --secondary-foreground: oklch(0.227 0.004 286.1);
   --muted: oklch(0.872 0.012 79.8);
-  --muted-foreground: oklch(0.351 0.010 285.9);
+  --muted-foreground: oklch(0.351 0.01 285.9);
   --accent: oklch(0.621 0.041 183.6);
   --accent-foreground: oklch(0.985 0.003 106.4);
   --destructive: oklch(0.55 0.19 27);
@@ -136,7 +136,9 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   border-bottom: 1px solid color-mix(in oklch, var(--color-primary) 45%, transparent);
-  transition: border-color 300ms ease, color 300ms ease;
+  transition:
+    border-color 300ms ease,
+    color 300ms ease;
 }
 
 @utility fade-up {
@@ -153,4 +155,3 @@
     transform: none;
   }
 }
-

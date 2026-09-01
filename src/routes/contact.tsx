@@ -47,16 +47,26 @@ function Contact() {
           <p className={line}>{g.address}</p>
           <ul className="mt-6 space-y-2">
             <li className={line}>
-              Mobile <a className={link} href={`tel:${g.mobile.replace(/\s/g, "")}`}>{g.mobile}</a>
+              Mobile{" "}
+              <a className={link} href={`tel:${g.mobile.replace(/\s/g, "")}`}>
+                {g.mobile}
+              </a>
             </li>
             <li className={line}>
-              Office <a className={link} href={`tel:${g.phone.replace(/\s/g, "")}`}>{g.phone}</a>
+              Office{" "}
+              <a className={link} href={`tel:${g.phone.replace(/\s/g, "")}`}>
+                {g.phone}
+              </a>
             </li>
             <li className={line}>
-              <a className={link} href={`mailto:${g.email}`}>{g.email}</a>
+              <a className={link} href={`mailto:${g.email}`}>
+                {g.email}
+              </a>
             </li>
             <li className={line}>
-              <a className={link} href={`mailto:${g.officeEmail}`}>{g.officeEmail}</a>
+              <a className={link} href={`mailto:${g.officeEmail}`}>
+                {g.officeEmail}
+              </a>
             </li>
           </ul>
         </section>
@@ -69,10 +79,14 @@ function Contact() {
               <p className={`mt-4 ${line}`}>{c.company}</p>
               <ul className="mt-6 space-y-2">
                 <li className={line}>
-                  <a className={link} href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>
+                  <a className={link} href={`tel:${c.phone.replace(/\s/g, "")}`}>
+                    {c.phone}
+                  </a>
                 </li>
                 <li className={line}>
-                  <a className={link} href={`mailto:${c.email}`}>{c.email}</a>
+                  <a className={link} href={`mailto:${c.email}`}>
+                    {c.email}
+                  </a>
                 </li>
                 {c.website ? (
                   <li className={line}>
