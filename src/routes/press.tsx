@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeading, SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { ALL_REVIEWS_URL, QUOTES, REVIEWS } from "@/data/dovgan";
+import { QUOTES, REVIEWS } from "@/data/dovgan";
 
 export const Route = createFileRoute("/press")({
   head: () => ({
