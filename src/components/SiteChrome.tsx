@@ -35,7 +35,7 @@ export function FloatingMenu() {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="fixed right-4 top-4 z-[70] flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background/70 backdrop-blur-md transition-colors hover:border-primary sm:right-8 sm:top-8 sm:h-14 sm:w-14"
+        className="fixed right-4 bottom-4 z-[70] flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background/70 backdrop-blur-md transition-colors hover:border-primary sm:right-8 sm:bottom-8 sm:h-14 sm:w-14"
       >
         <span className="relative block h-3 w-5">
           <span
