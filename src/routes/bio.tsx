@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHeading, SiteFooter } from "@/components/SiteChrome";
+import { PageHeading, SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { BIO_DATE, BIO_LANGUAGES, BIO_PARAGRAPHS, PHOTOS, QUOTES } from "@/data/dovgan";
 
 export const Route = createFileRoute("/bio")({
