@@ -44,7 +44,7 @@ function PressPage() {
         </div>
 
         <ul className="mt-20 border-t border-border">
-          {REVIEWS.map((r) => (
+          {visible.map((r) => (
             <li
               key={r.url}
               className="-mx-4 border-b border-border px-4 transition-colors duration-200 hover:bg-secondary/60"
