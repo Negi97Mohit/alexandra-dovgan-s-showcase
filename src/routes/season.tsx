@@ -26,7 +26,7 @@ export const Route = createFileRoute("/season")({
 function SeasonPage() {
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader compact />
       <PageHeading
         eyebrow={ARTIST.season}
         title="Concerts"

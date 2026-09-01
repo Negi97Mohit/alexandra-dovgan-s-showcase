@@ -32,7 +32,7 @@ function Contact() {
 
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader compact />
       <PageHeading
         eyebrow="Contact"
         title="Management"
