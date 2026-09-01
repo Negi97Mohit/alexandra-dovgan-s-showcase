@@ -80,23 +80,72 @@ export const PHOTOS = [
 
 export type Concert = {
   date: string;
+  day?: string;
+  time?: string;
   town: string;
   country: string;
   venue: string;
 };
 
 export const CONCERTS: Concert[] = [
-  { date: "02/09/2026", town: "Locarno", country: "Switzerland", venue: "Chiesa di San Francesco Locarno" },
-  { date: "26/09/2026", town: "Kawasaki", country: "Japan", venue: "Muza Kawasaki Symphony Hall" },
-  { date: "27/09/2026", town: "Niigata", country: "Japan", venue: "Ryutopia Concert Hall" },
-  { date: "02/10/2026", town: "Bari", country: "Italy", venue: "Teatro Petruzzelli" },
-  { date: "09/10/2026", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
-  { date: "11/10/2026", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
-  { date: "13/10/2026", town: "Como", country: "Italy", venue: "Teatro Sociale Como" },
-  { date: "15/10/2026", town: "Firenze", country: "Italy", venue: "Teatro del Maggio Musicale" },
-  { date: "17/10/2026", town: "Imola", country: "Italy", venue: "Teatro Comunale di Imola Ebe Stignani" },
-  { date: "21/10/2026", town: "Prague", country: "Czechia", venue: "Municipal House - Obecní dům" },
+  { date: "02/09/2026", day: "Wed", time: "20:00", town: "Locarno", country: "Switzerland", venue: "Chiesa di San Francesco Locarno" },
+  { date: "26/09/2026", day: "Sat", time: "14:00", town: "Kawasaki", country: "Japan", venue: "Muza Kawasaki Symphony Hall" },
+  { date: "27/09/2026", day: "Sun", time: "17:00", town: "Niigata", country: "Japan", venue: "Ryutopia Concert Hall" },
+  { date: "02/10/2026", day: "Fri", time: "20:30", town: "Bari", country: "Italy", venue: "Teatro Petruzzelli" },
+  { date: "09/10/2026", day: "Fri", time: "20:00", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "11/10/2026", day: "Sun", time: "16:00", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "13/10/2026", day: "Tue", time: "20:30", town: "Como", country: "Italy", venue: "Teatro Sociale Como" },
+  { date: "15/10/2026", day: "Thu", time: "20:00", town: "Firenze", country: "Italy", venue: "Teatro del Maggio Musicale" },
+  { date: "17/10/2026", day: "Sat", town: "Imola", country: "Italy", venue: "Teatro Comunale di Imola Ebe Stignani" },
+  { date: "21/10/2026", day: "Wed", time: "19:30", town: "Prague", country: "Czechia", venue: "Municipal House - Obecní dům" },
+  { date: "22/10/2026", day: "Thu", time: "19:30", town: "Prague", country: "Czechia", venue: "Municipal House - Obecní dům" },
+  { date: "27/10/2026", day: "Tue", time: "20:30", town: "Roma", country: "Italy", venue: "Università La Sapienza - Aula Magna" },
+  { date: "06/11/2026", day: "Fri", time: "19:30", town: "Weingarten", country: "Germany", venue: "Kultur- und Kongresszentrum Oberschwaben - Weingarten" },
+  { date: "16/11/2026", day: "Mon", time: "19:30", town: "Graz", country: "Austria", venue: "Congress Graz Stefaniensaal" },
+  { date: "17/11/2026", day: "Tue", time: "19:30", town: "Graz", country: "Austria", venue: "Congress Graz Stefaniensaal" },
+  { date: "20/11/2026", day: "Fri", time: "20:00", town: "Bordeaux", country: "France", venue: "Auditorium de l'Opéra National de Bordeaux" },
+  { date: "22/11/2026", day: "Sun", time: "17:00", town: "Zürich", country: "Switzerland", venue: "Tonhalle Zürich" },
+  { date: "26/11/2026", day: "Thu", time: "19:30", town: "Bern", country: "Switzerland", venue: "Casino Bern" },
+  { date: "29/11/2026", day: "Sun", time: "11:00", town: "Zürich", country: "Switzerland", venue: "Tonhalle Zürich" },
+  { date: "01/12/2026", day: "Tue", town: "Biel/Bienne", country: "Switzerland", venue: "Association Art Dialog / Art Dialog Verein" },
+  { date: "04/12/2026", day: "Fri", time: "20:00", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "06/12/2026", day: "Sun", time: "16:00", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "10/12/2026", day: "Thu", time: "20:00", town: "Barcelona", country: "Spain", venue: "Palau de la Música Catalana" },
+  { date: "21/12/2026", day: "Mon", time: "20:30", town: "Genova", country: "Italy", venue: "Teatro Carlo Felice" },
+  { date: "10/01/2027", day: "Sun", time: "19:30", town: "Budapest", country: "Hungary", venue: "Liszt Ferenc Academy of Music" },
+  { date: "13/01/2027", day: "Wed", time: "20:00", town: "Munich", country: "Germany", venue: "Prinzregententheater" },
+  { date: "24/01/2027", day: "Sun", time: "18:30", town: "Montecarlo", country: "Monaco", venue: "Auditorium Rainier III" },
+  { date: "28/01/2027", day: "Thu", time: "19:30", town: "Salzburg", country: "Austria", venue: "Stiftung Mozarteum" },
+  { date: "14/02/2027", day: "Sun", time: "19:30", town: "Vienna", country: "Austria", venue: "Wiener Konzerthaus" },
+  { date: "19/02/2027", day: "Fri", town: "Yerevan", country: "Armenia", venue: "Aram Khachaturian Concert Hall" },
+  { date: "26/02/2027", day: "Fri", town: "Las Palmas de Gran Canaria", country: "Spain", venue: "Auditorio Alfredo Kraus" },
+  { date: "28/02/2027", day: "Sun", time: "18:00", town: "Linz", country: "Austria", venue: "Brucknerhaus Linz" },
+  { date: "05/03/2027", day: "Fri", time: "19:30", town: "Sion", country: "Switzerland", venue: "NODA BCVS Sion" },
+  { date: "14/03/2027", day: "Sun", town: "New York", country: "USA", venue: "Frick Collection" },
+  { date: "18/03/2027", day: "Thu", town: "Washington", country: "United States", venue: "J.F. Kennedy Center for the Performing Arts" },
+  { date: "20/03/2027", day: "Sat", town: "Washington", country: "United States", venue: "J.F. Kennedy Center for the Performing Arts" },
+  { date: "24/03/2027", day: "Wed", time: "19:30", town: "Montréal", country: "Canada", venue: "La Maison Symphonique" },
+  { date: "25/03/2027", day: "Thu", time: "10:30", town: "Montréal", country: "Canada", venue: "La Maison Symphonique" },
+  { date: "01/04/2027", day: "Thu", time: "19:30", town: "Interlaken", country: "Switzerland", venue: "Congress Kursaal Interlaken AG" },
+  { date: "04/04/2027", day: "Sun", time: "11:00", town: "Warth", country: "Switzerland", venue: "Kartause Ittingen" },
+  { date: "06/04/2027", day: "Tue", time: "19:30", town: "Bruxelles", country: "Belgium", venue: "BOZAR Palais des Beaux-Arts" },
+  { date: "17/04/2027", day: "Sat", time: "19:30", town: "Hamburg", country: "Germany", venue: "Elbphilharmonie & Laeiszhalle Hamburg" },
+  { date: "29/04/2027", day: "Thu", time: "19:30", town: "Tafalla", country: "Spain", venue: "Centro Cultural Tafalla Kulturgunea" },
+  { date: "30/04/2027", day: "Fri", time: "19:30", town: "Tafalla", country: "Spain", venue: "Centro Cultural Tafalla Kulturgunea" },
+  { date: "06/05/2027", day: "Thu", time: "20:00", town: "Málaga", country: "Spain", venue: "Teatro Cervantes" },
+  { date: "07/05/2027", day: "Fri", time: "20:00", town: "Málaga", country: "Spain", venue: "Teatro Cervantes" },
+  { date: "15/05/2027", day: "Sat", time: "20:00", town: "Paris", country: "France", venue: "Théâtre des Champs-Élysées" },
+  { date: "21/05/2027", day: "Fri", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "22/05/2027", day: "Sat", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "23/05/2027", day: "Sun", town: "Milano", country: "Italy", venue: "Auditorium di Milano" },
+  { date: "28/05/2027", day: "Fri", time: "19:00", town: "Napoli", country: "Italy", venue: "Teatro San Carlo" },
+  { date: "04/06/2027", day: "Fri", time: "19:00", town: "Mainz", country: "Germany", venue: "Frankfurter Hof - Mainz" },
+  { date: "08/06/2027", day: "Tue", time: "20:15", town: "Den Haag", country: "Netherlands", venue: "Amare, Den Haag Concertzaal" },
+  { date: "20/06/2027", day: "Sun", town: "Ludwigsburg", country: "Germany", venue: "Forum am Schlosspark" },
+  { date: "21/06/2027", day: "Mon", time: "19:30", town: "Zürich", country: "Switzerland", venue: "Tonhalle Zürich" },
+  { date: "26/06/2027", day: "Sat", time: "11:00", town: "Évian-les-Bains", country: "France", venue: "La Source Vive" },
 ];
+
 
 export const NEWS = [
   {
