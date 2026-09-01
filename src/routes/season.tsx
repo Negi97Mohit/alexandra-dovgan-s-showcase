@@ -38,7 +38,7 @@ function SeasonPage() {
           {CONCERTS.map((c, i) => (
             <li
               key={`${c.date}-${i}`}
-              className="grid gap-2 border-b border-border py-7 md:grid-cols-[150px_1fr_260px] md:items-baseline"
+              className="-mx-4 grid gap-2 border-b border-border px-4 py-7 transition-colors duration-200 hover:bg-secondary/60 md:grid-cols-[150px_1fr_260px] md:items-baseline"
             >
               <span className="text-[0.6875rem] uppercase tracking-[0.24em] text-primary">
                 {c.date}

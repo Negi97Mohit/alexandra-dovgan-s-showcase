@@ -45,8 +45,11 @@ function PressPage() {
 
         <ul className="mt-20 border-t border-border">
           {REVIEWS.map((r) => (
-            <li key={r.url} className="border-b border-border py-6">
-              <a href={r.url} target="_blank" rel="noreferrer" className="group block">
+            <li
+              key={r.url}
+              className="-mx-4 border-b border-border px-4 transition-colors duration-200 hover:bg-secondary/60"
+            >
+              <a href={r.url} target="_blank" rel="noreferrer" className="group block py-6">
                 <p className="font-display text-2xl text-foreground transition-colors group-hover:text-primary">
                   “{r.title}”
                 </p>
