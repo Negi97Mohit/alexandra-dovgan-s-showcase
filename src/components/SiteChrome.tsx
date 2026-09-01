@@ -14,6 +14,27 @@ const NAV = [
 
 export function FloatingMenu() {
   const [open, setOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    const onScroll = () => {
+      setIsScrolling(true);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        setIsScrolling(false);
+      }, 400);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -28,6 +49,8 @@ export function FloatingMenu() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const isVisible = !isScrolling || open;
+
   return (
     <>
       <button
@@ -35,16 +58,20 @@ export function FloatingMenu() {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="fixed right-4 bottom-4 z-[70] flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background/70 backdrop-blur-md transition-colors hover:border-primary sm:right-8 sm:bottom-8 sm:h-14 sm:w-14"
+        className={`fixed right-4 bottom-4 z-[70] flex h-12 w-12 items-center justify-center rounded-full border-2 border-emerald-500 bg-background/90 shadow-[0_0_15px_rgba(16,185,129,0.25)] backdrop-blur-md transition-all duration-300 hover:border-emerald-400 sm:right-8 sm:bottom-8 sm:h-14 sm:w-14 ${
+          isVisible
+            ? "translate-y-0 scale-100 opacity-100"
+            : "pointer-events-none translate-y-4 scale-90 opacity-0"
+        }`}
       >
         <span className="relative block h-3 w-5">
           <span
-            className={`absolute left-0 h-px w-full bg-foreground transition-all duration-300 ${
+            className={`absolute left-0 h-0.5 w-full bg-foreground transition-all duration-300 ${
               open ? "top-1/2 rotate-45" : "top-0"
             }`}
           />
           <span
-            className={`absolute left-0 h-px w-full bg-foreground transition-all duration-300 ${
+            className={`absolute left-0 h-0.5 w-full bg-foreground transition-all duration-300 ${
               open ? "top-1/2 -rotate-45" : "top-full"
             }`}
           />
