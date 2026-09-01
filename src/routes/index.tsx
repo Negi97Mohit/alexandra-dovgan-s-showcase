@@ -38,7 +38,7 @@ function Home() {
     <div className="min-h-screen">
       <SiteHeader compact />
 
-      <section className="mx-auto grid max-w-[1400px] items-center gap-10 px-6 pt-10 pb-20 md:grid-cols-2 md:px-12 md:pt-16 md:pb-28">
+      <section className="mx-auto grid max-w-[1400px] items-start gap-10 px-6 pb-20 md:grid-cols-2 md:px-12 md:pb-28">
         <div className="fade-up">
           <h1 className="font-display text-6xl leading-[0.95] text-primary md:text-8xl">
             {ARTIST.first}
