@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ARTIST } from "@/data/dovgan";
 
 const NAV = [
@@ -12,58 +12,65 @@ const NAV = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-export function SiteHeader() {
+export function FloatingMenu() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-background/85 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-6 md:px-12">
-        <Link to="/" className="flex items-baseline gap-3">
-          <span className="text-sm uppercase tracking-[0.34em] text-foreground">
-            {ARTIST.name}
-          </span>
-          <span className="hidden text-[0.6875rem] uppercase tracking-[0.28em] text-primary sm:inline">
-            {ARTIST.instrument}
-          </span>
-        </Link>
+    <>
+      <button
+        type="button"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="fixed right-4 top-4 z-[70] flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background/70 backdrop-blur-md transition-colors hover:border-primary sm:right-8 sm:top-8 sm:h-14 sm:w-14"
+      >
+        <span className="relative block h-3 w-5">
+          <span
+            className={`absolute left-0 h-px w-full bg-foreground transition-all duration-300 ${
+              open ? "top-1/2 rotate-45" : "top-0"
+            }`}
+          />
+          <span
+            className={`absolute left-0 h-px w-full bg-foreground transition-all duration-300 ${
+              open ? "top-1/2 -rotate-45" : "top-full"
+            }`}
+          />
+        </span>
+      </button>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV.slice(1).map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="text-[0.6875rem] uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center border border-border lg:hidden"
-        >
-          <span className="relative block h-[7px] w-4">
-            <span className="absolute inset-x-0 top-0 h-px bg-foreground" />
-            <span className="absolute inset-x-0 bottom-0 h-px bg-foreground" />
-          </span>
-        </button>
-      </div>
-
-      {open ? (
-        <nav className="border-t border-border bg-background px-6 py-6 lg:hidden">
-          <ul className="space-y-4">
-            {NAV.map((item) => (
-              <li key={item.to}>
+      <div
+        className={`fixed inset-0 z-[60] bg-background/80 backdrop-blur-2xl transition-opacity duration-300 ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <nav className="flex h-full w-full items-center justify-center px-6">
+          <ul className="flex w-full max-w-md flex-col items-center gap-4 text-center sm:gap-6">
+            {NAV.map((item, i) => (
+              <li
+                key={item.to}
+                style={{ transitionDelay: open ? `${80 + i * 45}ms` : "0ms" }}
+                className={`transition-all duration-500 ${
+                  open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                }`}
+              >
                 <Link
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="text-[0.75rem] uppercase tracking-[0.24em] text-muted-foreground"
-                  activeProps={{ className: "text-primary" }}
+                  className="font-display text-3xl leading-none text-foreground transition-colors hover:text-primary sm:text-5xl"
+                  activeProps={{ className: "italic text-primary" }}
                 >
                   {item.label}
                 </Link>
@@ -71,10 +78,31 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-      ) : null}
-    </header>
+      </div>
+    </>
   );
 }
+
+export function SiteHeader({ compact = false }: { compact?: boolean }) {
+  return (
+    <>
+      <FloatingMenu />
+      {compact ? null : (
+        <header className="mx-auto max-w-[1400px] px-6 pt-12 pb-4 md:px-12 md:pt-16">
+          <Link to="/" className="block">
+            <h2 className="font-display text-4xl leading-[0.9] tracking-tight text-primary sm:text-6xl md:text-7xl">
+              Alexandra<span className="block italic">Dovgan</span>
+            </h2>
+            <span className="mt-4 block text-[0.6875rem] uppercase tracking-[0.34em] text-muted-foreground">
+              {ARTIST.instrument === "Piano" ? "Pianist" : ARTIST.instrument}
+            </span>
+          </Link>
+        </header>
+      )}
+    </>
+  );
+}
+
 
 export function SiteFooter() {
   return (
