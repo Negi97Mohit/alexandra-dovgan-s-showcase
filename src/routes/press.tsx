@@ -26,7 +26,7 @@ export const Route = createFileRoute("/press")({
 function PressPage() {
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader compact />
       <PageHeading eyebrow="Press" title="Reviews" />
 
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">

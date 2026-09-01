@@ -26,7 +26,7 @@ export const Route = createFileRoute("/gallery")({
 function GalleryPage() {
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader compact />
       <PageHeading
         eyebrow="Photogallery"
         title="Photographs"

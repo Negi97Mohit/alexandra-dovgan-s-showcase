@@ -29,7 +29,7 @@ function MediaPage() {
 
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <SiteHeader compact />
       <PageHeading eyebrow="Media" title="Watch & listen" />
 
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
