@@ -52,12 +52,9 @@ function Home() {
         <figure className="fade-up">
           <img
             src={PHOTOS[7]!.src}
-            alt="154 Dovgan © Vladimir Volkov"
+            alt="Alexandra Dovgan"
             className="w-full object-cover shadow-[0_30px_80px_-40px_rgba(0,0,0,0.55)]"
           />
-          <figcaption className="mt-3 text-[0.6875rem] uppercase tracking-[0.24em] text-muted-foreground">
-            154 Dovgan © Vladimir Volkov
-          </figcaption>
         </figure>
       </section>
 
